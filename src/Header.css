@@ -1,0 +1,180 @@
+/* Header Styling */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  color: #42403F;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); */
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+
+  /* Drop down animation */
+  transform: translateY(-100%);
+  opacity: 0;
+  animation: dropDown 0.8s ease-out forwards;
+}
+
+@keyframes dropDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Logo */
+.logo img {
+  height: 5rem;
+  width: 9rem;
+}
+
+/* Navbar (Desktop) */
+.navbar {
+  display: flex;
+  gap: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #42403F;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* Navbar items appearing one by one */
+.navbar a {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInNav 0.5s ease-out forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes fadeInNav {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delay each navbar item */
+.navbar a:nth-child(1) { --delay: 0.5s; }
+.navbar a:nth-child(2) { --delay: 0.7s; }
+.navbar a:nth-child(3) { --delay: 0.9s; }
+.navbar a:nth-child(4) { --delay: 1.1s; }
+.navbar a:nth-child(5) { --delay: 1.3s; }
+
+.navbar a:hover {
+  color: #4FBABB;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Side Menu Buttons */
+.side-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Button Hover Effects */
+.primary {
+  background: #4FBABB;
+  color: #fff;
+}
+
+.secondary {
+  background: #4D427C;
+  color: #fff;
+}
+
+.primary:hover {
+  background: #3D8F9E;
+}
+
+.secondary:hover {
+  background: #3B3666;
+}
+
+/* Hide Navbar & Side Menu on Scroll */
+.scrolled .navbar,
+.scrolled .side-menu {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+}
+
+/* Keep Hamburger Menu Visible */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1100;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scrolled .hamburger {
+  display: block;
+  opacity: 1;
+}
+
+/* Mobile Sidebar Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 40%;
+  height: 100vh;
+  background: #4D427C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  transition: right 0.4s ease-in-out;
+  z-index: 1001;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.mobile-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .mobile-menu {
+    width: 70%;
+  }
+}

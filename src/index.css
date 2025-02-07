@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --font-primary: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-heading: "Didact Gothic", serif;
+  --primary-color: #4FBABB;  /* Teal */
+  --secondary-color: #4D427C; /* Dark Purple */
+  --accent-color: #42403F; /* Deep Grey */
+  --background-light: #FAFAFB; /* Light Background */
+  --background-dark: #1a1a1a; /* Dark Background */
+  --text-light: #213547; 
+  --text-dark: rgba(255, 255, 255, 0.87);
+  --border-radius: 8px;
+  --box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-light);
+  background-color: var(--background-light);
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Buttons */
+button {
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform 0.2s;
+  box-shadow: var(--box-shadow);
+}
+button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+button:focus, button:focus-visible {
+  outline: 3px solid var(--secondary-color);
+}
+
+/* Containers & Sections */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5em; }
+  h2 { font-size: 2em; }
+  body { font-size: 16px; }
+}
+

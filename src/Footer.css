@@ -1,0 +1,141 @@
+.footer {
+  background-color:#1b172b;
+  color: #fff;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin:0 3rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px;
+}
+
+.footer-section img{
+  height: 5rem;
+  width: 9rem;
+
+}
+.footer-section h3 {
+  color: #4FBABB;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+.footer-section h2 {
+  color: #4FBABB;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  align-items: left;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.footer-section li {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-section li:hover {
+  transform: translateX(5px);
+  color: #f39c12;
+  cursor: pointer;
+}
+
+.footer-section p {
+  margin: 5px 0;
+  font-size: 0.9rem ;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin: 1.5rem;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+}
+.icon {
+  font-size: 25px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  color: #f39c12;
+}
+
+.newsletter-box {
+  display: flex;
+  border-radius: 5px;
+  /* border: 2px solid #f39c12; */
+}
+
+.newsletter-box input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.newsletter-box button {
+  background-color: #4FBABB;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.newsletter-box button:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.5rem;
+}
+
+
+.footer-bottom a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+
+}
+
+.footer-bottom li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom li:hover {
+  color: #f39c12;
+}
