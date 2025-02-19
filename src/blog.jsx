@@ -21,15 +21,17 @@ const Blog = () => {
 
         const data = await response.json();
         if (data.articles) {
-          const latestArticles = data.articles.slice(0, 10).map((article, idx) => ({
-            id: idx,
-            title: article.title,
-            image: article.image || "default.jpg",
-            summary: article.description || "No description available.",
-            url: article.url,
-          }));
+          const latestArticles = data.articles
+            .slice(0, 10)
+            .map((article, idx) => ({
+              id: idx,
+              title: article.title,
+              image: article.image || "default.jpg",
+              summary: article.description || "No description available.",
+              url: article.url,
+            }));
           setArticles(latestArticles);
-          setCurrentArticle(latestArticles[0]); // Set first article as default
+          setCurrentArticle(latestArticles[0]);
         }
       } catch (error) {
         console.error("Error fetching news:", error);
@@ -37,21 +39,19 @@ const Blog = () => {
     };
 
     fetchNews();
-    const interval = setInterval(fetchNews, 108000000); // Refresh every 30 hours
+    const interval = setInterval(fetchNews, 21600000);
     return () => clearInterval(interval);
   }, []);
 
-  // Auto-switch main article every 3 seconds
   useEffect(() => {
     if (articles.length > 0) {
       const slideInterval = setInterval(() => {
         setIndex((prevIndex) => (prevIndex + 1) % articles.length);
-      }, 3000);
+      }, 9000);
       return () => clearInterval(slideInterval);
     }
   }, [articles]);
 
-  // Update the current article when index changes
   useEffect(() => {
     if (articles.length > 0) {
       setCurrentArticle(articles[index]);
@@ -62,7 +62,8 @@ const Blog = () => {
     <div className="blog-section">
       <h2 className="blog-title">AI & Deepfake Fraud News</h2>
       <p className="blog-description">
-        Stay updated on the latest AI fraud and deepfake misuse cases affecting society.
+        Stay updated on the latest AI fraud and deepfake misuse cases affecting
+        society.
       </p>
       <div className="blog-container">
         {currentArticle && (
@@ -78,6 +79,7 @@ const Blog = () => {
               href={currentArticle.url}
               target="_blank"
               rel="noopener noreferrer"
+              className="read-more"
             >
               Read More
             </a>
@@ -88,7 +90,7 @@ const Blog = () => {
             <div
               key={article.id}
               className="article-item"
-              onClick={() => setIndex(idx)} // Click updates the main article
+              onClick={() => setIndex(idx)}
             >
               <h4>{article.title}</h4>
               <p>{article.summary.split(" ").slice(0, 10).join(" ")}...</p>

@@ -8,6 +8,8 @@ const reviews = [
   { name: "Atul Batra", title: "Startup Advisor and Mentor", text: "This is the need of the hour." },
   { name: "Dr. Srinivas Padmanabhuni", title: "CTO, AIensured", text: "Great Product, with great Potential" },
   { name: "Neelima Vobugari", title: "CIO, AIensured", text: "Team with high potential, product of the hour!" },
+  { name: "Shri Chanchal Kumar", title: "IAS, Secretary, Ministry of DoNER, GOI ", text: "This is a Good Product" },
+  { name: "Jai Prakash Govindraj", title: "Cyber Security Expert", text: "Apt solution for current day scenario" },
 ];
 
 const Reviews = () => {
@@ -36,7 +38,7 @@ const Reviews = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalReviews);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [totalReviews]);
 

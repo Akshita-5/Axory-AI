@@ -24,27 +24,41 @@ const Hero = () => {
       <div className="hero-content">
         <h1>AI-Powered Trust & Security for the Digital World</h1>
         <p>
-        Deepfakes and AI-generated fraud are rising. <span>Axory AI</span> empowers individuals and businesses with real-time detection and secure verification.
+          Deepfakes and AI-generated fraud are rising. <span>Axory AI</span>{" "}
+          empowers individuals and businesses with real-time detection and
+          secure verification.
         </p>
         <div className="search-box">
-          <a href="https://calendly.com/tarini_padmanabhuni/30min" target="_blank" rel="noopener noreferrer" className="cta-button">
+          <a
+            href="https://calendly.com/tarini_padmanabhuni/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button"
+          >
             Book a Call
           </a>
         </div>
-        {/* <div className="stats">
+        <div className="stats">
           <div className="stat">
-            <h2><CountUp start={0} end={10000} duration={3} />+</h2>
+            <h2>
+              <CountUp start={0} end={1000} duration={3} />+
+            </h2>
+            <p>Page Visitor</p>
+          </div>
+          <div className="stat">
+            <h2>
+              <CountUp start={0} end={50} duration={3} />+
+            </h2>
             <p>Followers</p>
           </div>
           <div className="stat">
-            <h2><CountUp start={0} end={500} duration={3} />+</h2>
-            <p>Clients Satisfied</p>
+            <h2>
+              <CountUp start={0} end={330} duration={3} />+
+            </h2>
+            <p>Site Visits</p>
           </div>
-          <div className="stat">
-            <h2><CountUp start={0} end={2500} duration={3} />+</h2>
-            <p>Page Visitors</p>
-          </div>
-        </div> */}
+          <p>and Counting...</p>
+        </div>
       </div>
 
       {/* 🌟 Circular Image Layout */}
@@ -54,7 +68,9 @@ const Hero = () => {
             key={index}
             src={img}
             alt={`img${index}`}
-            className={`circle img${index + 1} ${index === activeIndex ? "large" : ""}`} 
+            className={`circle img${index + 1} ${
+              index === activeIndex ? "large" : ""
+            }`}
           />
         ))}
       </div>
