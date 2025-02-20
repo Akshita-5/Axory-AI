@@ -1,78 +1,58 @@
-import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
-import "./Reviews.css";
+import React, { useState, useEffect } from 'react';
+import './Reviews.css';
 
-const reviews = [
-  { name: "Sucheta Kolekar", title: "Assistant Director, Innovation and Incubation", text: "" },
-  { name: "Zuber Ahmed", title: "Chief Innovation Officer, MAHE", text: "The next YC cohort members from Manipal!" },
-  { name: "Atul Batra", title: "Startup Advisor and Mentor", text: "This is the need of the hour." },
-  { name: "Dr. Srinivas Padmanabhuni", title: "CTO, AIensured", text: "Great Product, with great Potential" },
-  { name: "Neelima Vobugari", title: "CIO, AIensured", text: "Team with high potential, product of the hour!" },
-  { name: "Shri Chanchal Kumar", title: "IAS, Secretary, Ministry of DoNER, GOI ", text: "This is a Good Product" },
-  { name: "Jai Prakash Govindraj", title: "Cyber Security Expert", text: "Apt solution for current day scenario" },
-];
+const Carousel = () => {
+  const reviews = [
+    { name: "Sucheta Kolekar", title: "Assistant Director, Innovation and Incubation", text: "Innovative and impactful!" },
+    { name: "Zuber Ahmed", title: "Chief Innovation Officer, MAHE", text: "The next YC cohort members from Manipal!" },
+    { name: "Atul Batra", title: "Startup Advisor and Mentor", text: "This is the need of the hour." },
+    { name: "Dr. Srinivas Padmanabhuni", title: "CTO, AIensured", text: "Great Product, with great Potential" },
+    { name: "Neelima Vobugari", title: "CIO, AIensured", text: "Team with high potential, product of the hour!" },
+    { name: "Shri Chanchal Kumar", title: "IAS, Secretary, Ministry of DoNER, GOI", text: "This is a Good Product" },
+    { name: "Jai Prakash Govindraj", title: "Cyber Security Expert", text: "Apt solution for current-day scenarios" },
+  ];
 
-const Reviews = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleReviews, setVisibleReviews] = useState(3);
-  const totalReviews = reviews.length;
+  const [position, setPosition] = useState(0);
+  const itemWidth = 300; // Width of each carousel item
+  const totalWidth = itemWidth * reviews.length;
 
-  // Adjust the number of visible reviews based on screen size
-  useEffect(() => {
-    const updateVisibleReviews = () => {
-      if (window.innerWidth > 1024) {
-        setVisibleReviews(3);
-      } else if (window.innerWidth > 768) {
-        setVisibleReviews(2);
-      } else {
-        setVisibleReviews(1);
-      }
-    };
-
-    updateVisibleReviews();
-    window.addEventListener("resize", updateVisibleReviews);
-    return () => window.removeEventListener("resize", updateVisibleReviews);
-  }, []);
-
-  // Auto-scroll functionality with circular effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalReviews);
-    }, 3000);
+      setPosition((prevPosition) => {
+        const newPosition = prevPosition + 2; // Move 2px per frame
+        return newPosition >= totalWidth ? 0 : newPosition;
+      });
+    }, 30);
     return () => clearInterval(interval);
-  }, [totalReviews]);
+  }, [totalWidth]);
+
+  // Triple the items to ensure smooth infinite scroll
+  const displayItems = [...reviews, ...reviews, ...reviews];
 
   return (
-    <div className="reviews-section">
-      <h2 className="reviews-heading">
-        <span>What</span> people say about us?{" "}
+    <div className="testimonial-section">
+      <h2 className="testimonial-heading">
+        <span className="teal-text">What</span> people say about us?
       </h2>
       <div className="carousel-container">
-        <motion.div
-          className="reviews-wrapper"
-          animate={{ x: `-${currentIndex * (100 / visibleReviews)}%` }}
-          transition={{ ease: "easeInOut", duration: 1 }}
-          style={{
-            width: `${totalReviews * (100 / visibleReviews)}%`, // Dynamic width
-            display: "flex",
+        <div 
+          className="carousel" 
+          style={{ 
+            transform: `translateX(${-position}px)`,
+            width: `${totalWidth * 3}px` // Triple width for three sets of items
           }}
         >
-          {reviews.map((review, index) => (
-            <div
-              className={`review-card ${
-                index === currentIndex ? "center" : "side"
-              }`}
-              key={index}
-            >
-              <h3>{review.name}</h3>
-              <p className="title">{review.title}</p>
-              <p>{review.text}</p>
+          {displayItems.map((review, index) => (
+            <div key={index} className="carousel-item">
+              <p className="review-text">{review.text}</p>
+              <p className="review-name">{review.name}</p>
+              <p className="review-title">{review.title}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Reviews;
+export default Carousel;

@@ -1,74 +1,72 @@
-.reviews-section {
-  text-align: center;
-  background: #f9f9f9;
-  padding: 60px 20px;
-  position: relative;
+/* Reviews.css */
+.testimonial-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
   overflow: hidden;
 }
 
-.reviews-heading {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 30px;
+.testimonial-heading {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  font-weight: 600;
 }
 
-.reviews-heading span {
-  color: #ff6b6b;
+.teal-text {
+  color: #4fbabb;
 }
 
 .carousel-container {
-  width: 100%;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
   position: relative;
+  width: 100%;
 }
 
-.reviews-wrapper {
+.carousel {
   display: flex;
-  transition: transform 1s ease-in-out;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
+  transition: transform 0.1s linear;
+  will-change: transform;
 }
 
-.review-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 300px;
-  margin: 10px;
-  flex-shrink: 0;
-}
-.review-card h3{
-  color: black;
-  font-weight: bold;
+.carousel-item {
+  flex: 0 0 300px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  background: #f8f8f8;
+  border-radius: 8px;
+  margin-right: 20px;
 }
 
-.review-card.center {
-  transform: scale(1.1);
-  z-index: 2;
+.review-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #444;
+  margin-bottom: 12px;
+  font-style: italic;
 }
 
-.review-card.side {
-  opacity: 0.8;
+.review-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 8px 0 4px;
+  color: #333;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .review-card {
-    width: 250px;
-  }
+.review-title {
+  font-size: 0.7rem;
+  color: #666;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
-  .review-card {
-    width: 90%;
-  }
-
-  .reviews-heading {
+  .testimonial-heading {
     font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+  
+  .carousel-item {
+    flex: 0 0 250px;
+    padding: 12px 15px;
   }
 }
