@@ -38,7 +38,7 @@ const Solutions = () => {
             <img src={solution.img} alt={solution.title} className="solution-img" />
             <h3>{solution.title}</h3>
             <p>{solution.description}</p>
-            <button className="coming-soon-btn">Coming Soon...</button>
+            {/* <button className="coming-soon-btn">Coming Soon...</button> */}
           </motion.div>
         ))}
       </div>

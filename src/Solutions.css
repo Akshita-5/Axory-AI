@@ -80,7 +80,8 @@
   min-height: 50px;
   margin-bottom: 1.6rem;
 }
-/* "Coming Soon" Button */
+
+/* "Coming Soon" Button
 .coming-soon-btn {
   position: absolute;
   bottom: -50px;
@@ -94,17 +95,18 @@
   cursor: pointer;
   transition: bottom 0.4s ease-in-out, opacity 0.4s ease-in-out;
   opacity: 0;
-}
+} */
 
 .solution-card:hover .coming-soon-btn {
   opacity: 1;
   bottom: 10px;
 }
 
-.solution-card:hover h3{
+.solution-card:hover h3 {
   color: #000;
 }
-.solution-card:hover p{
+
+.solution-card:hover p {
   color: #4D427C;
 }
 
