@@ -11,20 +11,31 @@ import { Helmet } from "react-helmet";
 
 <Helmet>
   <title>Axory AI - AI Security & Fraud Detection</title>
-  <meta name="description" content="Protect your identity with Axory AI's deepfake detection and fraud prevention solutions." />
-</Helmet>
-
+  <meta
+    name="description"
+    content="Protect your identity with Axory AI's deepfake detection and fraud prevention solutions."
+  />
+</Helmet>;
 
 function App() {
   return (
     <>
       <Header />
-      <section id="home"><Hero /></section>
-      <section id="about"><About /></section>
-      <section id="solutions"><Solutions /></section>
-      <section id="blogs"><Blog /></section>
-      <section id="reviews"><Reviews /></section>
-      
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="solutions">
+        <Solutions />
+      </section>
+      <section id="blog">
+        <Blog /></section>
+      <section id="reviews">
+        <Reviews />
+      </section>
+
       <Footer />
     </>
   );

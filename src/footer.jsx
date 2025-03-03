@@ -13,6 +13,7 @@ const Footer = () => {
         <div className="footer-section">
           <img src={logo2}></img>
           <p>Where AI powers Authenticity</p>
+          <p>Innovation Centre, MIT Rd, Eshwar Nagar, Manipal, Karnataka 576104</p>
         </div>
 
 
@@ -20,10 +21,10 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Company</h3>
           <ul>
-            <li>➕ About Us</li>
-            <li>➕ Contact Us</li>
-            <li>➕ Book a Call</li>
-            <li>➕ Privacy Policy</li>
+            <li> About Us</li>
+            <li> Contact Us</li>
+            <li> Book a Call</li>
+            <li> Privacy Policy</li>
           </ul>
         </div>
 
