@@ -1,0 +1,9 @@
+{
+    "videoTitle": "SampleVideo.mp4",
+    "videoID": "VID12345",
+    "result": "Fake",
+    "fakeAccuracy": 87,
+    "realAccuracy": 13,
+    "confidenceScore": 92,
+    "anomalyScore": 78
+}
